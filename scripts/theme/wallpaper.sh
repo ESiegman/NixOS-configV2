@@ -4,7 +4,7 @@
 WALLPAPER_DIR="/home/eren/Pictures/wallpapers"
 
 # Path to the stylix configuration file
-CONFIG_FILE="/etc/nixos/theme/stylix-wallpaper.nix"
+CONFIG_FILE="/etc/nixos/System/Theme/stylix-wallpaper.nix"
 
 # Use wofi to select a wallpaper
 SELECTED_WALLPAPER=$(ls "$WALLPAPER_DIR" | wofi --dmenu --prompt "Select a wallpaper")
