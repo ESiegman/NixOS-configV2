@@ -29,6 +29,11 @@
     };
   };
 
+  system.activationScripts.changeConfigFilePermissions = ''
+   chown -R eren:users /etc/nixos/System/Theme
+   chmod -R 775 /etc/nixos/System/Theme
+  '';
+
   security.sudo.extraRules = [
     {
       users = [ "eren" ];

@@ -3,7 +3,7 @@
 { ... }:
 
 let
-  wallpaper = /home/eren/Pictures/wallpapers/demolition_lovers.png;
+  wallpaper = /home/eren/Pictures/wallpapers/cat.png;
 in
 
 {
