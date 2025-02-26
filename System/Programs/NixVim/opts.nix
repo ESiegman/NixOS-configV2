@@ -22,6 +22,14 @@
     
   keymaps = [
     {
+      action = "::lua require('conform').format({ async = true, lsp_fallback = true })<CR>";
+      key = "<leader>cc";
+      options = {
+        noremap = true;
+        silent = true;
+      };
+    }
+    {
       action = ":Neotree close<CR>";
       key = "<M-r>";
       options = {
