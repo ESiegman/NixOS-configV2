@@ -20,14 +20,6 @@ This repository contains my personal NixOS configuration files.
    sudo nixos-rebuild switch --flake .#nixos --impure
    ```
 
-## Scripts
-
-The `scripts/` folder contains various scripts that should be placed in your home directory (`~`). To move the scripts and set the executable permissions, run:
-   ```sh
-   cp -r scripts/* ~/
-   chmod +x ~/scripts/*
-   ```
-
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
