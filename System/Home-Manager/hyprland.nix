@@ -83,7 +83,7 @@
         "$mainMod SHIFT, B, exec, chromium --enable-features=WaylandWindowDecorations --ozone-platform-hint=auto --disable-gpu"
         "$mainMod, M, exec, spotify --enable-features=WaylandWindowDecorations --ozone-platform-hint=auto --disable-gpu"
         "$mainMod, D, exec, discord --enable-features=WaylandWindowDecorations --ozone-platform-hint=auto --no-sandbox --disable-gpu"
-        "$mainMod, A, exec, /home/eren/scripts/theme/wallpaper.sh"
+        "$mainMod, A, exec, /etc/nixos/System/Scripts/Theme/wallpaper.sh"
 
         ", Print, exec, sh -c 'hyprshot -m region output --clipboard-only'"
         "Shift, Print, exec, sh -c 'hyprshot -m window output --clipboard-only'"

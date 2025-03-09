@@ -5,6 +5,7 @@
 {
   environment.systemPackages = with pkgs; [
     cmatrix
+    cbonsai
     tgpt
     ueberzug
     ueberzugpp
@@ -39,7 +40,5 @@
 
     prismlauncher
     r2modman
-
-    tor-browser
   ];
 }

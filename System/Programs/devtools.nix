@@ -25,5 +25,8 @@
     prettierd
     texlive.combined.scheme-full
     matlab
+    arduino
+    arduino-cli
+    go
   ];  
 }

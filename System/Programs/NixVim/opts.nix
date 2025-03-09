@@ -3,7 +3,7 @@
 { ... }:
 
 {
-  globalOpts = {
+  opts = {
     number = true;
     relativenumber = true;
     signcolumn = "yes";

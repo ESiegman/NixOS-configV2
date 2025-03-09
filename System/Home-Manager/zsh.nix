@@ -15,7 +15,6 @@
 
       shellAliases = {
         grep = "grep --color=auto";
-        chrome = "chromium";
         teams = "teams-for-linux --enable-features=WaylandWindowDecorations --ozone-platform-hint=auto --no-sandbox --disable-gpu";
         discord = "discord --enable-features=WaylandWindowDecorations --ozone-platform-hint=auto --no-sandbox --disable-gpu";
         modman = "r2modman --enable-features=WaylandWindowDecorations --ozone-platform-hint=auto --no-sandbox --disable-gpu";
@@ -24,6 +23,8 @@
         fastfetch = "fastfetch --logo ~/.config/fastfetch/fastfetch.png --logo-height 21";
         matlab = "nvidia matlab";
         latex = "latexmk -pdf -f";
+        chrome = "nix-shell -p chromium --run 'chromium --enable-features=WaylandWindowDecorations --ozone-platform-hint=auto --disable-gpu'";
+        arduino= "nix-shell https://github.com/nix-community/nix-environments/archive/master.tar.gz -A arduino; arduino";
       };
       initExtraFirst = ''
         export XDG_DATA_HOME="$HOME/.local/share"

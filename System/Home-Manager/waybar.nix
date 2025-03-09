@@ -12,122 +12,130 @@
         position = "top";
         height = 30;
       
-      modules-left = [
-        "custom/nix"
-        "hyprland/workspaces"
-        "cpu"
-        "memory"
-        "custom/prev"
-        "custom/playerctl"
-        "custom/next"
-      ];
-      modules-center = [
-        "clock"
-      ];
-      modules-right = [
-        "backlight"
-        "pulseaudio"
-        "bluetooth"
-        "network"
-        "battery"
-        "tray"
-      ];
-      "custom/nix" = {
-        format = " ";
-        tooltip = false;
-        on-click = "wlogout";
-      };
-      "hyprland/workspaces" = {
-        format = "{name} {icon}";
-        tooltip = false;
-        all-outputs = true;
-        format-icons = {
-          active = "";
-          default = "";
-        };
-      };
-      "custom/prev" = {
-        format = "";
-        tooltip = false;
-        on-click = "playerctl previous";
-      };
-      "custom/playerctl" = {
-        format = "{}";
-        interval = 1;
-        exec = "$HOME/scripts/waybar/media_control.sh 2> /dev/null";
-        tooltip = false;
-        on-click = "playerctl play-pause";
-      };
-      "custom/next" = {
-        format = "";
-        tooltip = false;
-        on-click = "playerctl next";
-      };
-      "clock" = {
-        format = "{:%m-%d %I:%M %p}";
-      };
-      "backlight" = {
-        device = "intel_backlight";
-        format = "{icon} {percent}%";
-        format-icons = [
-          ""
-          ""
-          ""
-          ""
-          ""
-          ""
-          ""
-          ""
-          ""
+        modules-left = [
+          "custom/nix"
+          "hyprland/workspaces"
+          "cpu"
+          "memory"
+          "custom/prev"
+          "custom/playerctl"
+          "custom/next"
         ];
-      };
-      "pulseaudio" = {
-        format = "{icon} {volume}%";
-        format-muted = "";
-        format-icons = {
-          headphone = "";
-          default = [
-            ""
-            ""
-            "󰕾"
-            "󰕾"
-            "󰕾"
-            ""
-            ""
-            ""
+        modules-center = [
+          "clock"
+        ];
+        modules-right = [
+          "backlight"
+          "pulseaudio"
+          "bluetooth"
+          "network"
+          "battery"
+          "tray"
+        ];
+        "custom/nix" = {
+          format = " ";
+          tooltip = false;
+          on-click = "wlogout";
+        };
+        "hyprland/workspaces" = {
+          format = "{name} {icon}";
+          tooltip = false;
+          all-outputs = true;
+          format-icons = {
+            active = "";
+            default = "";
+          };
+        };
+        "custom/prev" = {
+          format = "";
+          tooltip = false;
+          on-click = "playerctl previous";
+        };
+        "custom/playerctl" = {
+          format = "{}";
+          interval = 1;
+          exec = "/etc/nixos/System/Scripts/Waybar/media_control.sh 2> /dev/null";
+          tooltip = false;
+          on-click = "playerctl play-pause";
+        };
+        "custom/next" = {
+          format = "";
+          tooltip = false;
+          on-click = "playerctl next";
+        };
+        "clock" = {
+          format = "{:%m-%d %I:%M %p}";
+        };
+        "backlight" = {
+          device = "intel_backlight";
+          format = "{icon} {percent}%";
+          format-icons = [
+            ""
+            ""
+            ""
+            ""
+            ""
+            ""
+            ""
+            ""
+            ""
           ];
         };
-      };
-      "bluetooth" = {
-        format = " {}";
-        format-disabled = "";
-        on-click = "blueman-manager";
-      };
-      "network" = {
-        format-wifi = "{essid} {percent}% ";
-        format-ethernet = "Connected  ";
-        tooltip-format = "{ifname} via {gwaddr}";
-        format-linked = "{ifname} (No IP)";
-        format-disconnected = "Disconnected";
-        format-alt = "{ifname}: {ipaddr}/{cidr}";
-        on-click = "nm-applet";
-      };
-      "battery" = {
-        format = "{icon} {capacity}%";
-        format-icons = [
-            "  "
-            "  "
-            "  "
-            "  "
-            "  "
-        ];
-        format-charging = "{icon} {capacity}%";
-        tooltip = false;
-      };
-      "tray" = {
-        icon-size = 20;
-        spacing = 10;
-      };
+        "pulseaudio" = {
+          format = "{icon} {volume}%";
+          format-muted = "";
+          format-icons = {
+            headphone = "";
+            default = [
+              ""
+              ""
+              "󰕾"
+              "󰕾"
+              "󰕾"
+              ""
+              ""
+              ""
+            ];
+          };
+        };
+        "bluetooth" = {
+          format = " {}";
+          format-disabled = "";
+          on-click = "blueman-manager";
+        };
+        "network" = {
+          format-wifi = "{essid} {percent}% ";
+          format-ethernet = "Connected  ";
+          tooltip-format = "{ifname} via {gwaddr}";
+          format-linked = "{ifname} (No IP)";
+          format-disconnected = "Disconnected";
+          format-alt = "{ifname}: {ipaddr}/{cidr}";
+          on-click = "nm-applet";
+        };
+        "battery" = {
+          format = "{icon} {capacity}%";
+          format-icons = [
+              "  "
+              "  "
+              "  "
+              "  "
+              "  "
+          ];
+          format-charging = "{icon} {capacity}%";
+          tooltip = false;
+        };
+        "tray" = {
+          icon-size = 20;
+          spacing = 10;
+        };
+        "cpu" = {
+          format = " {usage}%";
+          interval = 1;
+        };
+        "memory" = {
+          format = " {}%";
+          interval = 1;
+        };
       };
     };
     style = with config.lib.stylix.colors.withHashtag;

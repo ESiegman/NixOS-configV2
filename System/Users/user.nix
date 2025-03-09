@@ -23,6 +23,7 @@
         "lp"
         "scanner"
         "input"
+        "root"
       ];
       shell = pkgs.zsh;
       ignoreShellProgramCheck = true; # Ignore the check since Zsh is managed by Home Manager

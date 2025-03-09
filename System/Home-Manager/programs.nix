@@ -28,9 +28,6 @@
     firefox = {
       enable = true;
     };
-    chromium = {
-      enable = true;
-    };
   };
   services.playerctld.enable = true;
   home.sessionVariables = {

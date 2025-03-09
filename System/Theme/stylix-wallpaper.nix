@@ -3,7 +3,7 @@
 { ... }:
 
 let
-  wallpaper = /home/eren/Pictures/wallpapers/cat.png;
+  wallpaper = /etc/nixos/System/Theme/Wallpapers/blossoms.jpg;
 in
 
 {

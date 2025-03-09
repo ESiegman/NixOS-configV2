@@ -1,6 +1,6 @@
 # configuration.nix
 
-{ inputs, ... }:
+{ inputs, pkgs, ... }:
 
 {
   imports = [
@@ -23,7 +23,7 @@
   # Allocate swap memory space
   swapDevices = [{
     device = "/var/lib/swapfile";
-    size = 16 * 1024; # 16 GiB
+    size = 48 * 1024; # 48 GiB
   }];
 
   # Enable Home Manager for user configuration
@@ -39,7 +39,13 @@
   nixpkgs.config = {
     allowUnfree = true;
     allowUnfreePredicate = (_: true);
+    permittedInsecurePackages = [
+      "freeimage-unstable-2021-11-01"
+    ];
   };
+
+  boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.loader.grub.configurationLimit = 10;
 
   # Enable Nix Flakes
   nix.settings.experimental-features = [ "nix-command" "flakes" ];

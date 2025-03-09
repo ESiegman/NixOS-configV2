@@ -23,18 +23,16 @@
         nil_ls.enable = true;
         lua_ls.enable = true;
         ltex.enable = true;
+        arduino_language_server.enable = true;
       };
     };
     lsp-lines.enable = true;
     lsp-signature.enable = true;
     lspkind.enable = true;
-    lspsaga = {
-      enable = true;
-      ui = {
-        collapse = "";
-        expand = "";
-      };
-    };
     nix.enable = true;
+    clangd-extensions = {
+      enable = true;
+      enableOffsetEncodingWorkaround = true;
+    };
   };
 }
