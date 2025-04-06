@@ -14,7 +14,7 @@
         cm = "commit";
       };
     };
-    gitui = {
+    lazygit = {
       enable = true;
     };
   };

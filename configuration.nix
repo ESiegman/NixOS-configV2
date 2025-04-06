@@ -15,6 +15,8 @@
     ./System/Programs/applications.nix
     ./System/Programs/devtools.nix
     ./System/Programs/games.nix
+    ./System/Programs/docker.nix
+    ./System/Programs/spicetify.nix
     ./System/Theme/stylix-wallpaper.nix
     ./System/Theme/stylix.nix
     ./System/Users/user.nix
@@ -28,6 +30,7 @@
 
   # Enable Home Manager for user configuration
   home-manager = {
+    backupFileExtension = "backup";
     extraSpecialArgs = { inherit inputs; };
     useGlobalPkgs = true;
     users = {

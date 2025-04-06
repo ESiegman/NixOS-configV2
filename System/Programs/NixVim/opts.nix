@@ -22,7 +22,7 @@
     
   keymaps = [
     {
-      action = "::lua require('conform').format({ async = true, lsp_fallback = true })<CR>";
+      action = ":lua require('conform').format({ async = true, lsp_fallback = true })<CR>";
       key = "<leader>cc";
       options = {
         noremap = true;
@@ -72,6 +72,14 @@
     {
       action = ":tabprevious<CR>";
       key = "<M-Left>";
+      options = {
+        noremap = true;
+        silent = true;
+      };
+    }
+    {
+      action = ":LazyGitCurrentFile<CR>";
+      key = "<leader>gc";
       options = {
         noremap = true;
         silent = true;

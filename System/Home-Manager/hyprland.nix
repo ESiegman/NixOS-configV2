@@ -77,13 +77,14 @@
         "$mainMod, Q, exec, kitty"
         "$mainMod, E, exec, thunar"
         "$mainMod, F, exec, wofi"
-        "$mainMod, L, exec, hyprlock"
+        "$mainMod, L, exec, swaync-client -t -sw"
         "$mainMod, W, exec, wlogout"
         "$mainMod, B, exec, firefox"
         "$mainMod SHIFT, B, exec, chromium --enable-features=WaylandWindowDecorations --ozone-platform-hint=auto --disable-gpu"
         "$mainMod, M, exec, spotify --enable-features=WaylandWindowDecorations --ozone-platform-hint=auto --disable-gpu"
-        "$mainMod, D, exec, discord --enable-features=WaylandWindowDecorations --ozone-platform-hint=auto --no-sandbox --disable-gpu"
+        "$mainMod, D, exec, rm -rf /home/eren/.config/Vencord/themes; discord --enable-features=WaylandWindowDecorations --ozone-platform-hint=auto --no-sandbox --disable-gpu"
         "$mainMod, A, exec, /etc/nixos/System/Scripts/Theme/wallpaper.sh"
+        "$mainMod, N, exec, obsidian --enable-features=WaylandWindowDecorations --ozone-platform-hint=auto --disable-gpu"
 
         ", Print, exec, sh -c 'hyprshot -m region output --clipboard-only'"
         "Shift, Print, exec, sh -c 'hyprshot -m window output --clipboard-only'"
@@ -101,6 +102,7 @@
       exec-once = [
         "waybar &"
         "swww-daemon &"
+        "swaync &"
       ];
     };
     extraConfig = ''

@@ -37,5 +37,8 @@
       popups = 1.0;
     };
     polarity = "dark";
+    targets = {
+      spicetify.enable = false;
+    };
   };
 }

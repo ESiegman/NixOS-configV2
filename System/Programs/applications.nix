@@ -23,12 +23,13 @@
     orca-slicer
     libreoffice
     freecad
+    kicad
     zathura
 
     gimp
     vlc
 
-    spotify
+    
 
     zoom
     teams-for-linux
@@ -40,5 +41,7 @@
 
     prismlauncher
     r2modman
+
+    obsidian
   ];
 }

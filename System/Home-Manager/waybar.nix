@@ -31,6 +31,7 @@
           "network"
           "battery"
           "tray"
+          "custom/notification"
         ];
         "custom/nix" = {
           format = " ";
@@ -136,6 +137,26 @@
           format = " {}%";
           interval = 1;
         };
+        "custom/notification" = {
+          "tooltip" = false;
+          "format" = "{icon}";
+          format-icons = {
+            "notification" = "<span foreground='red'><sup></sup></span>";
+            "none" =  "";
+            "dnd-notification" = "<span foreground='red'><sup></sup></span>";
+            "dnd-none" = "";
+            "inhibited-notification" = "<span foreground='red'><sup></sup></span>";
+            "inhibited-none" = "";
+            "dnd-inhibited-notification" = "<span foreground='red'><sup></sup></span>";
+            "dnd-inhibited-none" = "";
+          };
+          "return-type" = "json";
+          "exec-if" = "which swaync-client";
+          "exec" = "swaync-client -swb";
+          "on-click" = "swaync-client -t -sw";
+          "on-click-right" = "swaync-client -d -sw";
+          "escape" = true;
+        };
       };
     };
     style = with config.lib.stylix.colors.withHashtag;
@@ -186,7 +207,8 @@
       #network,
       #battery,
       #tray,
-      #custom-vpn {
+      #custom-vpn,
+      #custom-notification {
         border-radius: 0;
         background-color: ${base01};
         color: ${base03};
@@ -244,10 +266,12 @@
 
       #custom-playerctl {
         border-radius: 0 0 0 0;
-      }
+        }
+
       #clock,
       #battery,
-      #tray {
+      #tray,
+      #custom-notification {
         border-radius: 10px 10px 10px 10px;
       }
     '';

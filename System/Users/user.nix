@@ -23,7 +23,8 @@
         "lp"
         "scanner"
         "input"
-        "root"
+        "dialout"
+        "docker"
       ];
       shell = pkgs.zsh;
       ignoreShellProgramCheck = true; # Ignore the check since Zsh is managed by Home Manager

@@ -27,7 +27,10 @@
       };
     };
     lsp-lines.enable = true;
-    lsp-signature.enable = true;
+    lsp-signature = {
+      enable = true;
+      autoLoad = true;
+    };
     lspkind.enable = true;
     nix.enable = true;
     clangd-extensions = {

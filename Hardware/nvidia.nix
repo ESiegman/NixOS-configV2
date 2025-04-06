@@ -40,6 +40,9 @@
         nvidiaBusId = "PCI:1:0:0";
       };
     };
+
+    # Enable NVIDIA for Docker
+    nvidia-container-toolkit.enable = true;
   };
 
   boot = {

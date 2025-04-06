@@ -13,6 +13,7 @@
     ./fastfetch.nix
     ./waybar.nix
     ./nixcord.nix
+    ./textfox.nix
   ];
   home = {
     username = "eren";

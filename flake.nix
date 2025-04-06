@@ -55,6 +55,18 @@
       url = "gitlab:Zhaith-Izaliel/sddm-sugar-candy-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    # Firefox Theme
+    textfox = {
+      url = "github:adriankarlen/textfox";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    # Spotify Theme
+    spicetify-nix = {
+      url = "github:Gerg-L/spicetify-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = { self, nixpkgs, ... }@inputs:
@@ -65,6 +77,11 @@
         overlays = [
           inputs.nix-matlab.overlay
           inputs.sddm-sugar-candy-nix.overlays.default
+          (final: prev: {
+            spicetify-cli = prev.spicetify-cli.overrideAttrs (old: rec {
+              buildInputs = old.buildInputs ++ [ prev.go_1_24 ];
+            });
+          })
         ];
         # Allow installing proprietary software
         config = {
@@ -81,6 +98,8 @@
           inputs.stylix.nixosModules.stylix
           inputs.nixvim.nixosModules.nixvim
           inputs.sddm-sugar-candy-nix.nixosModules.default
+          inputs.textfox.nixosModules.textfox
+          inputs.spicetify-nix.nixosModules.spicetify 
         ];
         specialArgs = { inherit inputs pkgs system; };
       };

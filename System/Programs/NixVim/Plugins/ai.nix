@@ -17,7 +17,7 @@
     };
     copilot-lua = {
       enable = true;
-      suggestion = {
+      settings.suggestion = {
         autoTrigger = true;
         debounce = 75;
         keymap = {

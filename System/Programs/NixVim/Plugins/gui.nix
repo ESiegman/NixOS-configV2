@@ -37,8 +37,10 @@
     };
     cursorline = {
       enable = true;
-      cursorline.number = true;
-      cursorword.enable = true;
+      settings = {
+        cursorline.number = true;
+        cursorword.enable = true;
+      };
     };
     hmts.enable = true;
     indent-blankline = {

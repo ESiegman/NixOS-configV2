@@ -27,6 +27,8 @@
     matlab
     arduino
     arduino-cli
-    go
+    arduino-ide
+    go_1_24
+    screen
   ];  
 }

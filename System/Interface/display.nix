@@ -14,7 +14,6 @@
       waybar
       wofi
       brightnessctl
-      mako
       wl-clipboard
       wlogout
       brightnessctl
@@ -22,6 +21,8 @@
       playerctl
       mesa-demos
       glxinfo
+      swaynotificationcenter
+      xdg-desktop-portal
     ];
   };
 
@@ -40,11 +41,11 @@
 
   xdg.portal = {
     enable = true;
-    extraPortals = [ 
-      pkgs.xdg-desktop-portal-gtk
-      pkgs.xdg-desktop-portal-wlr
-      pkgs.xdg-desktop-portal-gnome
-      pkgs.xdg-desktop-portal-hyprland
+    extraPortals = with pkgs; [ 
+      xdg-desktop-portal-gtk
+      xdg-desktop-portal-wlr
+      xdg-desktop-portal-gnome
+      xdg-desktop-portal-hyprland
     ];
     config = {
       common = {
