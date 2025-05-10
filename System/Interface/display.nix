@@ -23,6 +23,7 @@
       glxinfo
       swaynotificationcenter
       xdg-desktop-portal
+      base16-schemes
     ];
   };
 

@@ -21,10 +21,12 @@
         cat = "bat";
         buildsys = "sudo nixos-rebuild switch --flake .#nixos --impure";
         fastfetch = "fastfetch --logo ~/.config/fastfetch/fastfetch.png --logo-height 21";
-        matlab = "nvidia matlab";
+        matlab-gui = "nvidia matlab --enable-features=WaylandWindowDecorations --ozone-platform-hint=auto --no-sandbox";
+        matlab = "matlab -nosplash -nodesktop";
         latex = "latexmk -pdf -f";
         chrome = "nix-shell -p chromium --run 'chromium --enable-features=WaylandWindowDecorations --ozone-platform-hint=auto --disable-gpu'";
         obsidian = "obsidian --enable-features=WaylandWindowDecorations --ozone-platform-hint=auto --disable-gpu";
+        tetrio = "tetrio --enable-features=WaylandWindowDecorations --ozone-platform-hint=auto --no-sandbox --disable-gpu";
       };
       initExtraFirst = ''
         export XDG_DATA_HOME="$HOME/.local/share"
@@ -90,6 +92,32 @@
           export __VK_LAYER_NV_optimus=NVIDIA_only
           DRI_PRIME=1 "$@"
         }
+
+        # Commits all changes and pushes to the current or specified branch with an optional commit message
+        sendgit() {
+            local msg="update"
+            local branch
+
+            if [ -n "$1" ]; then
+                msg="$1"
+                shift
+            fi
+
+            branch=$(git symbolic-ref --short HEAD 2>/dev/null)
+            if [ -n "$1" ]; then
+                branch="$1"
+            fi
+
+            if ! git rev-parse --is-inside-work-tree &>/dev/null; then
+                echo "Not a Git repository"
+                return 1
+            fi
+
+            git add .
+            git commit -m "$msg"
+            git push origin "$branch"
+        }
+
 
         fastfetch --logo ~/.config/fastfetch/fastfetch.png --logo-height 21
       '';

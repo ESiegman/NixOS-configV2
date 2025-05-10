@@ -7,11 +7,11 @@
       enable = true;
       profile = "eren";
       config = {
-        #background = {
-        #  color = "#123456";
-        #};
+        background = {
+          #color = "#000000";
+        };
         border = {
-          #color = "#654321";
+          #color = "#555555";
           width = "4px";
           transition = "1.0s ease";
           radius = "3px";
@@ -26,7 +26,7 @@
         font = { 
           family = "Fira Code";
           size = "15px";
-          #accent = "#654321";
+          #accent = "#000000";
         };
         tabs.vertical.margin = "1.0rem";
       };

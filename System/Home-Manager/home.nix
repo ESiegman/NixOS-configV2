@@ -14,6 +14,7 @@
     ./waybar.nix
     ./nixcord.nix
     ./textfox.nix
+    ./stylix.nix
   ];
   home = {
     username = "eren";

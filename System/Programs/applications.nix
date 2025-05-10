@@ -17,6 +17,10 @@
     thefuck
     taskwarrior3
     nvitop
+    ffmpeg
+    pandoc
+
+    firefox
 
     obs-studio
 
@@ -29,7 +33,7 @@
     gimp
     vlc
 
-    
+    thunderbird
 
     zoom
     teams-for-linux
@@ -41,6 +45,7 @@
 
     prismlauncher
     r2modman
+    tetrio-desktop
 
     obsidian
   ];

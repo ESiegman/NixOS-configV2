@@ -3,7 +3,10 @@
 { ... }:
 
 let
-  wallpaper = /etc/nixos/System/Theme/Wallpapers/blossoms.jpg;
+  wallpaper = builtins.path {
+    path = "/etc/nixos/System/Theme/Wallpapers/rustic.png";
+    name = "wallpaper";
+  };
 in
 
 {
@@ -12,3 +15,4 @@ in
     targets.grub.enable = false;
   };
 }
+

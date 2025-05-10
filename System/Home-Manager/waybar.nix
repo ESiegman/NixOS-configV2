@@ -184,7 +184,7 @@
       #cpu,
       #memory {
         border-radius: 0;
-        background-color: ${base01};
+        background-color: ${base00};
         color: ${base03};
         margin-top: 5px;
         margin-right: 5px;
@@ -195,7 +195,7 @@
       #custom-playerctl button,
       #custom-prev button,
       #custom-next button {
-        background-color: ${base01};
+        background-color: ${base00};
         color: ${base03};
       }
 
@@ -210,7 +210,7 @@
       #custom-vpn,
       #custom-notification {
         border-radius: 0;
-        background-color: ${base01};
+        background-color: ${base00};
         color: ${base03};
         margin-top: 5px;
         padding: 0 10px;
@@ -241,7 +241,7 @@
         border-radius: 0;
         margin-left: 0;
         margin-right: 0;
-        border-left: 1px solid ${base05};
+        border-left: 1px; /* solid ${base03}; */
       }
 
       #custom-nix {

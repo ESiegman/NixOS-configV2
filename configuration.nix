@@ -50,6 +50,10 @@
   boot.kernelPackages = pkgs.linuxPackages_latest;
   boot.loader.grub.configurationLimit = 10;
 
+  services.udev.extraRules = ''
+    SUBSYSTEM=="usb", ATTR{idVendor}=="09db", ATTR{idProduct}=="00c6", MODE="0666"
+  '';
+
   # Enable Nix Flakes
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 

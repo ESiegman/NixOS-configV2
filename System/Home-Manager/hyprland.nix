@@ -2,6 +2,9 @@
 
 { lib, config, ... }:
 
+let
+  to0x = hex: "0x" + (lib.removePrefix "#" hex);
+in 
 {
   wayland.windowManager.hyprland = {
     enable = true;
@@ -18,8 +21,8 @@
         "resize_on_border" = "false";
         "allow_tearing" = "true";
         "layout" = "dwindle";
-        "col.active_border" = lib.mkForce "rgb(${config.stylix.base16Scheme.base01})";
-        "col.inactive_border" = lib.mkForce "rgb(${config.stylix.base16Scheme.base00})";
+        "col.active_border" = lib.mkForce (to0x config.stylix.base16Scheme.base01);
+        "col.inactive_border" = lib.mkForce (to0x config.stylix.base16Scheme.base00);
       };
 
       decoration = {
@@ -101,7 +104,6 @@
       ];
       exec-once = [
         "waybar &"
-        "swww-daemon &"
         "swaync &"
       ];
     };
