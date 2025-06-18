@@ -24,6 +24,8 @@
       swaynotificationcenter
       xdg-desktop-portal
       base16-schemes
+      nwg-drawer
+      nwg-dock-hyprland
     ];
   };
 

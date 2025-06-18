@@ -79,7 +79,8 @@ in
 
         "$mainMod, Q, exec, kitty"
         "$mainMod, E, exec, thunar"
-        "$mainMod, F, exec, wofi"
+        #"$mainMod, F, exec, wofi"
+        "$mainMod, F, exec, /etc/nixos/System/Scripts/dock.sh"
         "$mainMod, L, exec, swaync-client -t -sw"
         "$mainMod, W, exec, wlogout"
         "$mainMod, B, exec, firefox"

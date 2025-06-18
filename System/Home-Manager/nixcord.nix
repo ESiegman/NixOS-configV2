@@ -2,16 +2,6 @@
 
 { pkgs, ... }:
 
-#let
-#     pkgs = import (builtins.fetchGit {
-#         name = "old-nixpkgs-vencord";
-#         url = "https://github.com/NixOS/nixpkgs/";
-#         ref = "refs/heads/nixpkgs-unstable";
-#         rev = "882842d2a908700540d206baa79efb922ac1c33d";
-#     }) {};
-#
-#     myPkg = pkgs.vencord;
-#in
 {
   programs.nixcord = {
     enable = true;
@@ -24,6 +14,10 @@
         #"https://raw.githubusercontent.com/ESiegman/nixos-config/refs/heads/main/theme/custom.theme.css"
       ];
       frameless = true;
+    };
+  };
+}
+/*
       plugins = {
         accountPanelServerProfile.enable = true;
         alwaysAnimate.enable = true;
@@ -59,4 +53,4 @@
       };
     };
   };
-}
+}*/

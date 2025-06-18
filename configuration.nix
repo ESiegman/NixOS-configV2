@@ -49,12 +49,14 @@
 
   boot.kernelPackages = pkgs.linuxPackages_latest;
   boot.loader.grub.configurationLimit = 10;
-
+  
+  boot.kernelModules = [ "usbtmc" ];
   services.udev.extraRules = ''
     SUBSYSTEM=="usb", ATTR{idVendor}=="09db", ATTR{idProduct}=="00c6", MODE="0666"
+    SUBSYSTEM=="usbtmc", ATTR{idVendor}=="1ab1", ATTR{idProduct}=="a4a8", MODE="0666"
   '';
 
-  # Enable Nix Flakes
+   # Enable Nix Flakes
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   system.stateVersion = "24.05";

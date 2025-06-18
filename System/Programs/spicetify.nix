@@ -15,6 +15,6 @@ in
        oneko
      ];
      theme = spicePkgs.themes.text;
-     colorScheme = "rosepine";
+     colorScheme = "RosePine";
     };
   }

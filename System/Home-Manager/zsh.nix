@@ -21,8 +21,8 @@
         cat = "bat";
         buildsys = "sudo nixos-rebuild switch --flake .#nixos --impure";
         fastfetch = "fastfetch --logo ~/.config/fastfetch/fastfetch.png --logo-height 21";
-        matlab-gui = "nvidia matlab --enable-features=WaylandWindowDecorations --ozone-platform-hint=auto --no-sandbox";
-        matlab = "matlab -nosplash -nodesktop";
+        matlab-gui = "export LIBGL_ALWAYS_SOFTWARE=1; nvidia matlab --enable-features=WaylandWindowDecorations --ozone-platform-hint=auto --no-sandbox --disable-gpu";
+        matlab = "export LIBGL_ALWAYS_SOFTWARE=1; matlab -nosplash -nodesktop";
         latex = "latexmk -pdf -f";
         chrome = "nix-shell -p chromium --run 'chromium --enable-features=WaylandWindowDecorations --ozone-platform-hint=auto --disable-gpu'";
         obsidian = "obsidian --enable-features=WaylandWindowDecorations --ozone-platform-hint=auto --disable-gpu";

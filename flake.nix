@@ -78,11 +78,6 @@
         overlays = [
           inputs.nix-matlab.overlay
           inputs.sddm-sugar-candy-nix.overlays.default
-          (final: prev: {
-            spicetify-cli = prev.spicetify-cli.overrideAttrs (old: rec {
-              buildInputs = old.buildInputs ++ [ prev.go_1_24 ];
-            });
-          })
         ];
         # Allow installing proprietary software
         config = {
