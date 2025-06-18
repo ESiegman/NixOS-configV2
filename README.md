@@ -19,7 +19,3 @@ This repository contains my personal NixOS configuration files.
    ```sh
    sudo nixos-rebuild switch --flake .#nixos --impure
    ```
-
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
